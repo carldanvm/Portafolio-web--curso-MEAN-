@@ -1,10 +1,19 @@
-<h1>Home</h1>
 
-<ul>
-    <li><a [routerLink]="['/about']">Sobre mi</a></li>
-    <li><a [routerLink]="['/contact']">Contacto</a></li>
-    <li><a [routerLink]="['/projects']">Proyectos</a></li>
-    <li><a [routerLink]="['/create']">Añadir proyecto</a></li>
-</ul>
+<header>
+    <ul class="navbar">
+        <li><a [routerLink]="['/about']" [routerLinkActive]="['actived']">Sobre mi</a></li>
+        <li><a [routerLink]="['/contact']" [routerLinkActive]="['actived']">Contacto</a></li>
+        <li id="logo" ><a>CV</a></li>
+        <li><a [routerLink]="['/projects']" [routerLinkActive]="['actived']">Proyectos</a></li>
+        <li><a [routerLink]="['/create']" [routerLinkActive]="['actived']">Añadir proyecto</a></li>
+    </ul>
+</header>
 
-<router-outlet></router-outlet>
+<section id="content">
+    <router-outlet></router-outlet>
+</section>
+
+<footer>
+    Carlos Vieira Company &copy;
+</footer>
+

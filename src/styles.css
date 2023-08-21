@@ -1,1 +1,300 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+	font-family: "yanone";
+	src: url("assets/css/fonts/yanone.ttf");
+}
+@font-face {
+	font-family: "finger";
+	src: url("assets/css/fonts/finger.ttf");
+}
+@font-face {
+	font-family: "titilium";
+	src: url("assets/css/fonts/titilium.ttf");
+}
+
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background-image: url(assets/img/pattern.png);
+	font-family: yanone;
+	font-size: 25px;
+	background-attachment: fixed ;
+	
+}
+
+.logo{
+	font-family: finger;
+}
+
+.clearfix{
+	float:none;
+	clear: both;
+}
+
+header{
+	width: 100%;
+	height: 70px;
+	background: rgba(93, 93, 189, 0.8);
+	position: fixed;
+	text-transform: uppercase;
+}
+
+header ul{
+	display: block;
+	height: inherit;
+	margin: 1px auto;
+	text-align: center;
+}
+
+header ul li{
+	display: inline-block;
+	margin: 0px auto;
+	text-align: center;
+	line-height: 60px;
+}
+
+header ul li a{
+	display: block;
+	padding-right: 20px;
+	padding-left: 20px;
+	height: inherit;
+	text-decoration: none;
+	color: white;
+	transition: all 300ms;
+}
+
+header a:hover, .actived{
+	background: rgba(93, 93, 189, 1);
+}
+
+header #logo a:hover{
+	background: transparent;
+	color: black;
+	transform: scale(1.3);
+	cursor:pointer
+	
+}
+
+#logo{
+	font-family: finger;
+	font-size: 33px;
+	transition: color 500ms, transform 500ms;
+}
+
+#content{
+	min-height: 840px;
+	height: auto;
+	width: 75%;
+	margin: 0px auto;
+	box-shadow: 0px 0px 40px black;
+	background: rgba(255, 255, 255, 0.7);
+	padding-top: 120px;
+	border-left: 1.5px solid gray;
+	border-right: 1.5px solid gray;
+}
+
+footer{
+	width: 75%;
+	margin: 0px auto;
+	padding-top: 15px;
+	color: rgba(0, 0, 0, 0.55);
+}
+
+#title {
+	width: 35%;
+	margin: 0px auto;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+#title h1{
+	font-family: "titilium";
+	font-size: 50px;
+	border-bottom: 1px solid black;
+}
+
+#title h2{
+	font-family: "titilium";
+	font-size: 30px;
+	color: gray;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#title p{
+	font-family: "titilium";
+	font-size: 20px;
+	color: gray;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#about h2{
+	border-bottom: 1px solid black;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+#about{
+	padding-left: 35px;
+	padding-right: 35px;
+	text-align: justify;
+}
+
+#about p{
+	padding-top: 20px;
+}
+
+.container{
+	padding: 50px;
+	padding-top: 10px;
+}
+
+.container h2{
+	display: block;
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+form{
+	width: 80%;
+}
+form label{
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	
+}
+
+form input[type="text"],
+	input[type="number"],
+	input[type="email"],
+	input[type="file"],
+	textarea
+	{
+	width: 55%;
+	padding: 5px;
+	border-radius: 5px;
+	}
+
+form button, form input[type="submit"], .buttonEdit, .buttonDelete{
+	display: block;
+	font-size: 18px;
+	padding: 10px;
+	margin-top: 20px;
+	color: white;
+	background: rgba(50, 50, 219, 0.7);
+	border-radius: 5px;
+	border: 1px solid rgba(85, 85, 120, 1);
+	transition: all 200ms;
+}
+
+.buttonEdit, .buttonDelete{
+	float: left;
+	margin-right: -20px;
+	margin-left: 37px;
+	padding-left: 10px;
+	width: 120px;
+}
+
+
+form button:hover, form input[type="submit"]:hover, .buttonEdit:hover, .buttonDelete:hover{
+	background: rgba(50, 50, 219, 1);
+	cursor: pointer;
+}
+
+form button:active, form input[type="submit"]:active, .buttonEdit:active, .buttonDelete:active{
+	background: rgba(50, 50, 219, 0.7);
+	transition: 50ms;
+}
+
+.form-error{
+	color: rgb(170, 29, 29);
+	font-size: 17px;
+
+}
+
+form input[type="submit"]:disabled{
+	background: rgba(50, 50, 219, 0.3);
+	cursor: not-allowed;
+}
+
+.message{
+	padding: 5px;
+	font-size: 22px;
+	color: green;
+}
+.failed{
+	color: rgb(199, 16, 16);
+}
+.project img{
+	width: 100%;
+	height: -webkit-fill-available;
+
+}
+.project{
+	list-style: none;
+	display: block;
+	float: left;
+	width: 28%;
+	text-align: center;
+	margin-left: 20px;
+	margin-right: 25px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.project .image{
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+
+.project a{
+	text-decoration: none;
+	color: black;
+	
+}
+
+.project a:hover{
+	color: rgba(50, 50, 219, 1);
+}
+
+.container .data{
+	float: left;
+	margin-left: 40px ;
+	margin-top: 20px;
+	width: 40%;
+}
+
+.container .imageProject img{
+	float: left;
+	width: 47%;
+	margin-top: 20px;
+}
+
+/* Estilos para el bloque de imagen y texto del proyecto */
+.project {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.3s ease;
+  }
+  
+  /* Estilos para el efecto de hover en el bloque de imagen y texto del proyecto */
+  .project:hover {
+	transform: scale(1.1); /* Aumenta el tamaño del bloque */
+	background-color: rgba(0, 0, 0, 0.1); /* Cambia el color de fondo */
+  }
+  
+  /* Estilos para la imagen dentro del bloque de proyecto */
+  .project img {
+	width: 100%;
+	height: auto;
+  }
+  
