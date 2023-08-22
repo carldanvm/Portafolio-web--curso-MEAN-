@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" *ngIf="project">
     <h1>{{project.name}}</h1>
-    <div class="imageProject">
+    <div class="imageProject" *ngIf="project.image">
         <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image" />
     </div>
 
@@ -11,9 +11,15 @@
         <p>{{project.year}}</p>
     </div>
 
-    <p>
-        <button class="buttonEdit">Editar</button>
-        <button class="buttonDelete" (click)="deleteProject(projectId)">Borrar</button>
+    <p *ngIf="confirm==false">
+        <button class="buttonEdit" [routerLink]="['/edit', projectId]">Editar</button>
+        <button class="buttonDelete" (click)="setConfirm(true)">Borrar</button>
+
+    </p>
+
+    <p *ngIf="confirm==true">
+        <button class="buttonEdit" (click)="setConfirm(false)">Cancelar</button>
+        <button class="buttonDelete" (click)="deleteProject(projectId)">Confirmar</button>
 
     </p>
 

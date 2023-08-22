@@ -38,4 +38,11 @@ export class ProjectService{
 
         return this._http.delete(this.url+'delete-project/'+id, {headers: headers})
     }
+
+    updateProject(project: Project){
+        let params = JSON.stringify(project)
+        let headers = new HttpHeaders().set('Content-Type', 'application/json')
+
+        return this._http.put(this.url+'update-project/'+project._id, params, {headers : headers})
+    }
 }

@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CreateComponent } from './components/create/create.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { EditComponent } from './components/edit/edit.component';
 
 const routes: Routes = [
   { path : '', component : AboutComponent,},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path : 'create', component : CreateComponent,},
   { path : 'projects', component : ProjectsComponent,},
   { path : 'proyecto/:id', component : DetailComponent,},
+  { path : 'edit/:id', component : EditComponent,},
   { path : '**', component : AboutComponent,},
   
 ];

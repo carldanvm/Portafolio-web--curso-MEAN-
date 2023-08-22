@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="project">
     <h2>{{title}}</h2>
     
     <div class="message success" *ngIf="status==true">
@@ -55,10 +55,9 @@
             <label for="image">Imagen del Proyecto</label>
             <input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)" required>
             
-              
-              
         </p>
-
+        
+        
         <input type="submit" value="Enviar" [disabled]="projectForm.invalid">
 
     </form>

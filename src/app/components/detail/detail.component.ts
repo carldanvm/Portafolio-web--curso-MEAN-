@@ -16,13 +16,15 @@ export class DetailComponent implements OnInit {
   public project!: Project
   public url: string
   public projectId!: string
+  public confirm: boolean
 
   constructor( 
     private _projectService: ProjectService,
     private _route: ActivatedRoute,
     private _router: Router
+    
   ) {
-               
+    this.confirm = false       
     this.url = global.url
   }
 
@@ -51,6 +53,10 @@ export class DetailComponent implements OnInit {
         this._router.navigate(['/projects'])
       }
     )
+  }
+
+  setConfirm(boolean:boolean){
+    this.confirm = boolean
   }
 
 }

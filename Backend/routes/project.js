@@ -14,7 +14,7 @@ router.post('/test', projectController.test);
 router.post('/save-project', projectController.saveProject);
 router.get('/get-project/:id?', projectController.getProject);
 router.get('/get-projects', projectController.getProjects);
-router.post('/update-project/:id?', projectController.updateProject);
+router.put('/update-project/:id?', projectController.updateProject);
 router.delete('/delete-project/:id?', projectController.deleteProject);
 router.post('/upload-image/:id?', multipartMiddleware, projectController.uploadImage);
 router.get('/get-image/:image', projectController.getImageFile);

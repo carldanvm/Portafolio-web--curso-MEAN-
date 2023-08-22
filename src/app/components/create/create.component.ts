@@ -6,6 +6,7 @@ import { global } from 'src/app/services/global';
 import { ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -18,16 +19,14 @@ export class CreateComponent {
     public project: Project;
     public status!: boolean;
     public filesToUpload!: Array<File>;
-    
+    public url: string
+  
 
-    
-    
-    
     constructor( private _projectService: ProjectService,
                  private _uploadService: UploadService ) 
     {
       this.title = "Añadir proyecto";
-
+      this.url = global.url
       this.project = new Project("", "", "", "", "", 2023, "")
       
     }
@@ -39,12 +38,12 @@ export class CreateComponent {
       this._projectService.saveProject(this.project).subscribe(
         response => {
           if (response.project) {
-            this.status = true;
 
-            this._uploadService.makeFileRequest(global.url+'upload-image/'+response.project._id, [], this.filesToUpload, 'image')
-
-            form.resetForm()
-            
+            if (this.filesToUpload){
+              this.status = true
+              this._uploadService.makeFileRequest(global.url+'upload-image/'+response.project._id, [], this.filesToUpload, 'image')
+              form.resetForm()
+            }
 
             
 
